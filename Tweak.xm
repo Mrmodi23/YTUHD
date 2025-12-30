@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <CoreMedia/CoreMedia.h>
+@import Foundation;
+@import UIKit;
+@import CoreMedia;
 
 #import <objc/runtime.h>
 #import <string.h>
@@ -18,22 +18,13 @@
 #import <version.h>
 #import "Header.h"
 
-#pragma mark - Forward Declarations (Required for Xcode 16)
+#pragma mark - Forward Declarations (required for modules)
 
-@interface MLABRPolicy : NSObject
-@end
-
-@interface MLABRPolicyOld : NSObject
-@end
-
-@interface MLABRPolicyNew : NSObject
-@end
-
-@interface MLHAMPlayerItem : NSObject
-@end
-
-@interface MLHLSStreamSelector : NSObject
-@end
+@interface MLABRPolicy : NSObject @end
+@interface MLABRPolicyOld : NSObject @end
+@interface MLABRPolicyNew : NSObject @end
+@interface MLHAMPlayerItem : NSObject @end
+@interface MLHLSStreamSelector : NSObject @end
 
 #pragma mark - Types
 
@@ -54,7 +45,7 @@ extern "C" {
 
 #pragma mark - Helpers
 
-NSArray <MLFormat *> *filteredFormats(NSArray <MLFormat *> *formats) {
+NSArray<MLFormat *> *filteredFormats(NSArray<MLFormat *> *formats) {
     if (AllVP9()) return formats;
 
     NSPredicate *predicate =
